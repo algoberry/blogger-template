@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+        <meta content='follow, index' name='robots'/>
+        <title><data:blog.pageTitle/></title>
+        <b:if cond='data:blog.pageType == "index"'>
+        <meta name='title' expr:content='data:blog.pageTitle'/>
+        <b:else/>
+        <meta name='title' expr:content='data:blog.pageName'/>
+        </b:if>
+        <meta name='description' expr:content='data:view.description.escaped'/>
+        <meta property='og:type' content='website'/>
+        <meta property='og:site_name' content='data:blog.title'/>
+        <meta property='og:url' expr:content='data:blog.url'/>
+        <b:if cond='data:blog.pageType == "index"'>
+        <meta property='og:title' expr:content='data:blog.pageTitle'/>
+        <b:else/>
+        <meta property='og:title' expr:content='data:blog.pageName'/>
+        </b:if>
+        <meta property='og:description' expr:content='data:view.description.escaped'/>
+        <link rel='preconnect' href='https://fonts.googleapis.com'/>
+        <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='anonymous'/>
+        <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap' rel='stylesheet'/>
+        <b:skin><![CDATA[
+        
+        /* General */
+        body {
+        margin:0px;
+        padding:0px;
+        display:flex;
+        flex-direction:column;
+        font-family: 'Roboto', sans-serif;
+        line-height:1.6;
+        font-size:17px;
+        color:#14171a;
+        }
+
+        h1, h2, h4 {
+        margin:0px;
+        padding:0px;
+        }
+
+        /* Ahref */
+        a {
+        text-decoration:none;
+        color:inherit;
+        }
+
+        /* Layout */
+        nav, main, footer {
+        width:1053px;
+        margin-left:auto;
+        margin-right:auto;
+        }
+
+        header {
+        border-bottom:1px solid #aab8c2;
+        margin-bottom:20px;
+        }
+
+        nav {
+        display:flex;
+        flex-direction:row;
+        font-family:Verdana;
+        }
+
+        #leftnav {
+        flex:0 auto;
+        margin-top:auto;
+        margin-bottom:auto;
+        text-align:left;
+        font-weight:bold;
+        font-size:35px;
+        }
+
+        #rightnav {
+        flex:1 auto;
+        margin-top:auto;
+        margin-bottom:auto;
+        text-align:right;
+        font-size:16px;
+        }
+
+        #rightnav  a {
+        margin-left:15px;
+        }
+
+        main {
+        display:flex;
+        flex-direction:row;
+        }
+
+        section {
+        width:753px;
+        line-height:25px;
+        }
+
+        #innersection {
+        padding-right:25px;
+        }
+
+        aside {
+        width:300px;
+        line-height:25px;
+        }
+
+        footer {
+        font-size:15px;
+        border-top:1px solid #aab8c2;
+        margin-top:20px;
+        padding-top:10px;
+        padding-bottom:10px;
+        }
+
+        /* SVG */
+        .svg-icon-left-post {
+        width:20px;
+        height:20px;
+        }
+
+        .svg-icon-left-post path {
+        fill:#FFFFFF;
+        }
+
+        .svg-icon-post {
+        width:20px;
+        height:20px;
+        padding:5px;
+        }
+
+        .svg-icon-post path {
+        fill:#FFFFFF;
+        }
+
+        /* Social Media - Share */
+        .social-icon-bar {
+        position:fixed;
+        top:50%;
+        -webkit-transform:translateY(-50%);
+        -ms-transform:translateY(-50%);
+        transform:translateY(-50%);
+        }
+
+        .social-icon-bar a {
+        display:block;
+        text-align:center;
+        padding:14px;
+        transition:all 0.3s ease;
+        color:white;
+        }
+
+        .social-icon-bar a:hover {
+        background-color:#000;
+        }
+
+        .facebook {
+        background:#3B5998;
+        }
+
+        .twitter {
+        background:#55ACEE;
+        }
+
+        .tumblr {
+        background:#314358;
+        }
+
+        /* Social Media - Follow */
+        #media {
+        margin:0px;
+        padding:0px;
+        }
+
+        #media li {
+        display:inline-block;
+        }
+
+        #media svg {
+        width:40px;
+        }
+
+        /* Section */
+        section h1, section h2 {
+        font-size:30px;
+        line-height:1.4;
+        }
+
+        section h4 {
+        font-size:16px;
+        }
+
+        time {
+        font-size:15px;
+        }
+
+        article {
+        margin-bottom:50px;
+        text-align:justify;
+        overflow-wrap:break-word;
+        }
+
+        section h1, section h2 {
+        text-align:initial;
+        }
+
+        #blog-pager {
+        font-weight:700;
+        font-size:25px;
+        }
+
+        #blog-pager a {
+        color:#1da1f2; 
+        }
+
+        /* Related Post */
+        #relatedposts ul, #relatedposts ul li {
+        margin:0px;
+        padding:0px;
+        list-style:none;
+        }
+
+        #relatedposts a {
+        font-size:16px;
+        }
+
+        /* Comment */
+        .comments {
+        font-size:15px;
+        border-top:2px dashed #14171a;
+        margin-top:10px;
+        padding-top:10px;
+        }
+
+        .comment-block {
+        border:2px dashed #6DB72C;
+        padding:10px;
+        }
+
+        .datetime a {
+        color:#aab8c2;
+        font-size:14px;
+        }
+
+        /* Aside */
+        aside {
+        font-size:15px;
+        }
+
+        .normalbox {
+        margin-bottom:20px;
+        }
+
+        aside h4 {
+        font-size:16px;
+        }
+
+        .label {
+        color:#14171a;
+        background-color:#e1e8ed;
+        text-align:center;
+        cursor:pointer;
+        border-radius:3px;
+        padding:4px;
+        line-height:2.2;
+        }
+
+        #PopularPosts1 ul, #PopularPosts1 ul li {
+        margin:0px;
+        padding:0px;
+        list-style:none;
+        }
+
+        #PopularPosts1 ul li {
+        margin-bottom:4px;
+        }
+
+        /* Code */
+        .codebox {
+        margin-top:8px;
+        margin-bottom:8px;
+        font-size:16px;
+        }
+
+        .fN {
+        color:#21094e;
+        margin-bottom:5px;
+        }
+
+        .code {
+        padding:16px;
+        overflow:auto;
+        color:#59D9D1;
+        background-color:#000000;
+        border-left:5px solid #605a56;
+        }
+
+        pre {
+        margin:0px;
+        padding:0px;
+        }
+
+        .lI {
+        color:#ffffff;
+        }
+
+        .kC {
+        color:#F5D67B;
+        }
+
+        .cC {
+        color:#b8b0b0;
+        }
+
+        .qC {
+        color:#FC7038;
+        }
+
+        .pC {
+        color:#F5D67B;
+        }
+
+        .iPC {
+        color:#F5D67B;
+        }
+
+        .bC {
+        color:#F5D67B;
+        }
+
+        .iBC {
+        color:#F5D67B;
+        }
+
+        /* Download */
+        #download {
+        margin-top:10px;
+        margin-bottom:5px;
+        }
+        
+        #download a {
+        background-color:#25d366;
+        color:black;
+        text-align:center;
+        font-size:16px;
+        cursor:pointer;
+        font-weight:bold;
+        padding:5px;
+        border-radius:3px;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            body {
+            padding-left:15px;
+            padding-right:15px;
+            }
+
+            nav, main, footer {
+            width:100%;
+            }
+
+            nav, main {
+            flex-direction:column;
+            }
+
+            #leftnav, #rightnav {
+            width:100%;
+            text-align:center;
+            }
+
+            #rightnav {
+            overflow-x:auto;
+            white-space:nowrap;
+            }
+
+            section, aside {
+            width:100%;
+            }
+
+            #innersection {
+            padding-right:0px;
+            }
+
+            #blog-pager {
+            font-size:22px;
+            }
+        }
+
+        ]]></b:skin>
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <nav>
+                <div id='leftnav'>
+                    <a expr:href='data:blog.homepageUrl'><data:blog.title/></a>
+                </div>
+                <div id='rightnav'>
+                    <a href=''>Link 1</a>
+                    <a href=''>Link 2</a>
+                    <a href=''>Link 3</a>
+                    <a href=''>Link 4</a>
+                </div>
+            </nav>
+        </header>
+        <b:if cond='data:view.isError'>
+        <b:else/>
+            <b:if cond='data:blog.pageType == "index"'>
+            <b:else/>
+                <b:if cond='data:blog.isMobileRequest == "false"'>
+                    <!-- Social Media Share Links -->
+                    <div class='social-icon-bar'>
+                    <a class='facebook' expr:href='"https://www.facebook.com/sharer/sharer.php?u=" + data:blog.url' rel='noopener' target='_blank' title='Share to Facebook'><svg class='svg-icon-left-post' viewBox='0 0 20 20'><path d='M11.344,5.71c0-0.73,0.074-1.122,1.199-1.122h1.502V1.871h-2.404c-2.886,0-3.903,1.36-3.903,3.646v1.765h-1.8V10h1.8v8.128h3.601V10h2.403l0.32-2.718h-2.724L11.344,5.71z' fill='none'/></svg></a>
+                    <a class='twitter' expr:href='"https://twitter.com/intent/tweet?url=" + data:blog.url + "&amp;text=" + data:blog.pageName' rel='noopener' target='_blank' title='Share to Twitter'><svg class='svg-icon-left-post' viewBox='0 0 20 20'><path d='M18.258,3.266c-0.693,0.405-1.46,0.698-2.277,0.857c-0.653-0.686-1.586-1.115-2.618-1.115c-1.98,0-3.586,1.581-3.586,3.53c0,0.276,0.031,0.545,0.092,0.805C6.888,7.195,4.245,5.79,2.476,3.654C2.167,4.176,1.99,4.781,1.99,5.429c0,1.224,0.633,2.305,1.596,2.938C2.999,8.349,2.445,8.19,1.961,7.925C1.96,7.94,1.96,7.954,1.96,7.97c0,1.71,1.237,3.138,2.877,3.462c-0.301,0.08-0.617,0.123-0.945,0.123c-0.23,0-0.456-0.021-0.674-0.062c0.456,1.402,1.781,2.422,3.35,2.451c-1.228,0.947-2.773,1.512-4.454,1.512c-0.291,0-0.575-0.016-0.855-0.049c1.588,1,3.473,1.586,5.498,1.586c6.598,0,10.205-5.379,10.205-10.045c0-0.153-0.003-0.305-0.01-0.456c0.7-0.499,1.308-1.12,1.789-1.827c-0.644,0.28-1.334,0.469-2.06,0.555C17.422,4.782,17.99,4.091,18.258,3.266' fill='none'/></svg></a>
+                    <a class='tumblr' expr:href='"https://www.tumblr.com/share?v=3&amp;u=" + data:blog.url + "&amp;t=" + data:blog.pageName' rel='noopener' target='_blank' title='Share to Tumblr'><svg class='svg-icon-left-post' viewBox='0 0 20 20'><path d='M11.039,14.123c-0.231-0.129-0.414-0.303-0.498-0.518C10.53,13.568,10.54,9.17,10.54,9.17h3.253V6.75h-3.25V3.5L8.474,3.512C8.386,4.181,8.225,4.733,7.991,5.167C7.756,5.601,7.445,5.972,7.059,6.281C6.673,6.592,6.208,6.828,5.665,6.994l0.001,2.194L7.293,9.17v4.215c0,0.594,0.067,1.047,0.198,1.359c0.133,0.312,0.37,0.607,0.713,0.887c0.343,0.277,0.757,0.49,1.242,0.639c0.484,0.15,1.008,0.23,1.64,0.23c0.555,0,1.006-0.057,1.484-0.164c0.479-0.104,1.165-0.287,1.756-0.549l0.009-1.996c-0.692,0.428-1.549,0.59-2.247,0.59C11.693,14.381,11.344,14.293,11.039,14.123' fill='none'/></svg></a>
+                    </div>
+                </b:if>
+            </b:if>
+        </b:if>
+        <main>
+           <!-- Section -->
+            <section>
+                <div id='innersection'>
+                <b:if cond='data:view.isError'>
+                    Oops no result found !
+                <b:else/>
+                    <b:section id='content-section'>
+                        <b:widget id='Blog1'>
+                        <b:includable id='main'>
+                            <b:loop values='data:posts' var='post'>
+                                <article>
+                                <time><data:post.timestamp/></time>
+                                <b:if cond='data:blog.pageType == "index"'>
+                                <h2><a expr:href='data:post.url' rel='follow'><data:post.title/></a></h2>
+                                <b:else/>
+                                <h1><data:post.title/></h1>
+                                </b:if>
+                                <data:post.body/>
+                                <b:if cond='data:blog.pageType != "index"'>
+                                <b:include cond='data:blog.pageType in {"static_page","item"}' data='post' name='comment_picker'/>	
+                                </b:if>
+                                </article>
+                            </b:loop>
+                            <div id='blog-pager'>
+                                <b:if cond='data:newerPageUrl'>
+                                <span id='blog-pager-newer-link'>								
+                                <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' rel='follow' title='Newer Post'>Newer Post</a>
+                                </span>
+                                </b:if>
+                                <b:if cond='data:olderPageUrl'>
+                                <span id='blog-pager-older-link'>
+                                <a class='blog-pager-older-link' expr:href='data:olderPageUrl' rel='follow' title='Older Post'>Older Post</a>
+                                </span>
+                                </b:if>
+                                <a class='home-link' expr:href='data:blog.homepageUrl' rel='follow'>Home</a>
+                            </div>
+                        </b:includable>
+                        </b:widget>
+                    </b:section>
+                </b:if>
+                </div>
+            </section>
+            <!-- Aside -->
+            <aside>
+                <!-- Social Media -->
+                <div class='normalbox'>
+                    <h4>Follow Us</h4>
+                    <ul id='media'>
+                        <li><a href='' title='Twitter'><svg fill='#14171a' viewBox='0 0 512 512'><path d='M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z'/></svg></a></li>
+                        <li><a href='' title='GitHub'><svg fill='#14171a' viewBox='0 0 512 512'><path d='M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z'/></svg></a></li>
+                        <li><a href='' title='Facebook'><svg fill='#14171a' viewBox='0 0 512 512'><path d='M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z'/></svg></a></li>
+                        <li><a href='' title='RSS'><svg fill='#14171a' viewBox='0 0 512 512'><path d='M201.8 347.2c0 20.3-16.5 36.8-36.8 36.8 -20.3 0-36.8-16.5-36.8-36.8s16.5-36.8 36.8-36.8C185.3 310.4 201.8 326.8 201.8 347.2zM128.2 204.7v54.5c68.5 0.7 124 56.3 124.7 124.7h54.5C306.7 285.3 226.9 205.4 128.2 204.7zM128.2 166.6c57.9 0.3 112.3 22.9 153.2 63.9 41 41 63.7 95.5 63.9 153.5h54.5c-0.3-149.9-121.7-271.4-271.6-271.9V166.6L128.2 166.6z'/></svg></a></li>
+                        <li><a href='' title='Email'><svg fill='#14171a' viewBox='0 0 512 512'><path d='M101.3 141.6v228.9h0.3 308.4 0.8V141.6H101.3zM375.7 167.8l-119.7 91.5 -119.6-91.5H375.7zM127.6 194.1l64.1 49.1 -64.1 64.1V194.1zM127.8 344.2l84.9-84.9 43.2 33.1 43-32.9 84.7 84.7L127.8 344.2 127.8 344.2zM384.4 307.8l-64.4-64.4 64.4-49.3V307.8z'/></svg></a></li>                    
+                        <li><a href='' title='YouTube'><svg fill='#14171a' viewBox='0 0 512 512'><path d='M422.6 193.6c-5.3-45.3-23.3-51.6-59-54 -50.8-3.5-164.3-3.5-215.1 0 -35.7 2.4-53.7 8.7-59 54 -4 33.6-4 91.1 0 124.8 5.3 45.3 23.3 51.6 59 54 50.9 3.5 164.3 3.5 215.1 0 35.7-2.4 53.7-8.7 59-54C426.6 284.8 426.6 227.3 422.6 193.6zM222.2 303.4v-94.6l90.7 47.3L222.2 303.4z'/></svg></a></li>
+                    </ul>
+                </div>
+                <!-- Label -->
+                <div class='normalbox'>
+                    <h4>Label</h4>
+                    <b:section id='label-section'>
+                    <b:widget id='Label1'>
+                        <b:includable id='main'>
+                        <b:loop values='data:labels' var='label'>
+                        <a class='label' expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+                        </b:loop>
+                        </b:includable>
+                    </b:widget>
+                    </b:section>
+                </div>
+                <!-- Popular Post -->
+                <div class='normalbox'>
+                    <h4>Popular Posts</h4>
+                    <b:section id='popularpost-section'>
+                    <b:widget id='PopularPosts1'>
+                        <b:includable id='main'>
+                        <ul>
+                        <b:loop values='data:posts' var='post'>
+                        <li><a expr:href='data:post.href'><data:post.title/></a></li>
+                        </b:loop>
+                        </ul>
+                        </b:includable>
+                    </b:widget>
+                    </b:section>
+                </div>
+            </aside>
+        </main>
+        <footer>
+        Copyright &#9400; <data:blog.title/> | Powered by <a href='https://www.blogger.com'>Blogger.com</a>
+        </footer>
+    </body>
+</html>
