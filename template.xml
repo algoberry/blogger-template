@@ -509,5 +509,21 @@
         <footer>
         Copyright &#9400; <data:blog.title/> | Powered by <a href='https://www.blogger.com'>Blogger.com</a>
         </footer>
+        <!-- Share API -->
+        <script type='text/javascript'>
+        if(navigator.share) {
+            document.getElementById('share').addEventListener('click', () => {
+                navigator.share({
+                    url: '<data:blog.url/>',
+                    <b:if cond='data:blog.pageType == "index"'>
+                    title: '<data:blog.pageTitle/>',
+                    <b:else/>
+                    title: '<data:blog.pageName/>',
+                    </b:if>
+                    text: '<data:view.description.escaped/>'
+                });
+            });
+        }
+        </script>
     </body>
 </html>
