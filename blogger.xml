@@ -1,0 +1,617 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'/>
+    <meta content='follow, index' name='robots'/>
+    <title><data:blog.pageTitle/></title>
+    <b:if cond='data:blog.pageType == "index"'>
+    <meta name='title' expr:content='data:blog.pageTitle'/>
+    <b:else/>
+    <meta name='title' expr:content='data:blog.pageName'/>
+    </b:if>
+    <meta name='description' expr:content='data:view.description.escaped'/>
+    <meta property='og:type' content='website'/>
+    <meta property='og:site_name' expr:content='data:blog.title'/>
+    <b:if cond='data:blog.pageType == "index"'>
+    <meta property='og:title' expr:content='data:blog.pageTitle'/>
+    <b:else/>
+    <meta property='og:title' expr:content='data:blog.pageName'/>
+    </b:if>
+    <meta property='og:description' expr:content='data:view.description.escaped'/>
+    <meta property='og:url' expr:content='data:blog.url'/>
+    <!-- Add you favicon image -->
+    <link rel='shortcut icon' type='image/png' href=''/>
+    <!-- Use this if statement to avoid google ads or google analytics count, in case you test this template in your own blogger login session -->
+    <!-- Replace  this below '&quot;Algoberry&quot;' because in my blog i set title as Algoberry -->
+    <b:if cond='data:blog.title == &quot;Algoberry&quot;'>
+    
+    </b:if>
+    <!-- Apply you favourite fonts here and also please apply same in below body css -->
+    <link href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800' rel='stylesheet'/>
+    <b:skin><![CDATA[
+    
+    /* General */
+    body {
+    margin:0px;
+    padding:0px;
+    display:flex;
+    flex-direction:column;
+    font-family:'Open Sans', sans-serif;
+    font-size:15px;
+    font-weight:400;
+    line-height:1.5;
+    color:#181823;
+    /*overflow-wrap:break-word;*/
+    text-align:left;
+    /*text-align:justify;*/
+    /*text-rendering:optimizeLegibility;*/
+    }
+
+    h1, h2, h4, #blog-pager {
+    margin:0px;
+    padding:0px;
+    line-height:1.4;
+    }
+
+    h1, h2 {
+    font-size:30px;
+    }
+
+    h4 {
+    }
+
+    .avatar-image-container {
+    border-radius:50%;
+    }
+
+    .img700 {
+    width:100%;
+    padding:0px;
+    margin-top:10px;
+    margin-bottom:10px;
+    }
+
+    /* Ahref */
+    a {
+    text-decoration:none;
+    color:inherit;
+    }
+
+    .lin {
+    color:#00BFFF;
+    }
+
+    .hil {
+    color: #000;
+    background-color: #E4DCCF;
+    padding: 5px;
+    font-size: 15px;
+    }
+
+    /* Layout */
+    nav, main, footer {
+    width:1024px;
+    margin-left:auto;
+    margin-right:auto;
+    }
+
+    header {
+    width:100%;
+    border-bottom:1px solid #cdcdcd;
+    margin-bottom:20px;
+    }
+
+    input[type=text] {
+    margin:10px 0px;
+    padding:10px 12px;
+    width:100%;
+    display:inline-block;
+    border:1px solid #ccc;
+    border-radius:6px;
+    box-sizing:border-box;
+    }
+
+    nav {
+    display:flex;
+    flex-direction:row;
+    margin-top:5px;
+    margin-bottom:5px;
+    }
+
+    #leftnav {
+    order:0;
+    flex:0 auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:left;
+    }
+
+    #leftnav a {
+    margin:auto;
+    }
+
+    #middlenav {
+    order:1;
+    flex:2 auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+    margin-left:10px;
+    margin-right:10px;
+    }
+
+    #rightnav {
+    order:2;
+    flex:1 auto;
+    margin-top:auto;
+    margin-bottom:auto;
+    text-align:right;
+    }
+
+    main {
+    display:flex;
+    gap:24px;
+    flex-direction:row;
+    min-height:100vh;
+    }
+
+    section {
+    width:700px;
+    }
+
+    aside {
+    width:300px;
+    }
+
+    footer {
+    border-top:1px solid #cdcdcd;
+    margin-top:20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    }
+
+    /* Social Media Share */
+    .social-icon-share {
+    position:fixed;
+    top:50%;
+    -webkit-transform:translateY(-50%);
+    -ms-transform:translateY(-50%);
+    transform:translateY(-50%);
+    }
+
+    .social-icon-share a {
+    display:block;
+    text-align:center;
+    padding:14px;
+    transition:all 0.3s ease;
+    color:white;
+    }
+
+    .social-icon-share a:hover {
+    background-color:#000000;
+    }
+
+    .svg-share {
+    width:30px;
+    height:30px;
+    }
+
+    .svg-share path {
+    fill:#FFFFFF;
+    }
+
+    .svg-mo-share {
+    width:30px;
+	height:30px;
+	padding:5px;
+    }
+
+    .svg-mo-share path {
+    fill:#FFFFFF;
+    }
+
+    .svg-follow {
+    width:35px;
+    height:35px;
+    }
+
+    .svg-follow path {
+    fill:inherit;
+    }
+
+    .facebook {
+    background:#3B5998;
+    }
+
+    .twitter {
+    background:#55ACEE;
+    }
+
+    .tumblr {
+    background:#314358;
+    }
+
+    /* Section */
+    article {
+    margin-bottom:30px;
+    }
+
+    .contentdiv, footer {
+    font-size:17px;
+    }
+
+    time {
+    font-size:14px;
+    color:#9e9d89;
+    }
+
+    .commentdiv {
+    border-top:1px dashed #cdcdcd;
+    margin-top:10px;
+    padding-top:10px;
+    }
+
+    /* Comment */
+    .comments .comments-content .comment-header, .comments .comments-content .comment-content {
+    margin:0px;
+    }
+
+    .comments .comments-content .comment:first-child {
+    padding-top:0px;
+    }
+
+    .comments .comments-content .user, .comments .continue a  {
+    font-size:14px !important;
+    font-weight:bolder;
+    }
+
+    .comment-block {
+    padding:10px;
+    /*background-color:#DBDFEA;*/
+    background-color:#F1F6F9;
+    }
+    
+    .comment-actions a {
+    font-size:14px;
+    font-weight:bolder;
+    }
+
+    .datetime a {
+    font-size:13px;
+    }
+
+    #blog-pager {
+    font-size:25px;
+    font-weight:bold;
+    }
+
+    #blog-pager a {
+    color:#00BFFF;
+    }
+
+    /* Aside */
+    .box {
+    margin-bottom:10px;
+    }
+
+    .label {
+    color:#14171a;
+    background-color:#e1e8ed;
+    text-align:center;
+    cursor:pointer;
+    border-radius:3px;
+    padding:4px;
+    line-height:2.2;
+    }
+
+    #PopularPosts1 ul, #PopularPosts1 ul li {
+    margin:0px;
+    padding:0px;
+    list-style:none;
+    }
+
+    /* Code Highlighter Start */
+
+    /* Code Div */
+    .codediv {
+    font-size:16px;
+    padding:0px;
+    margin-top:5px;
+    margin-bottom:5px;
+    }
+
+    /* File Name Color */
+    .fN {
+    color:#21094e;
+    margin-bottom:5px;
+    }
+
+    /* Code */
+    .code {
+    line-height:normal;
+    padding:15px;
+    overflow:auto;
+    color:#85d9eb;
+    background-color:#191e1e;
+    border-left:5px solid #605a56;    
+    }
+
+    /* Paragraph */
+    pre {
+    margin:0px;
+    padding:0px;
+    }
+
+    /* Line Number Color */
+    .lI {
+    color:#ffffff;
+    }
+
+    /* Keyword Color */
+    .kC {
+    color:#56e27a;
+    }
+
+    /* Single Line & Mulitple Lines Comment Color */
+    .cC {
+    color:#b8b0b0;
+    }
+
+    /* Single & Double Quotes Color */
+    .qC {
+    color:#d4f088;
+    }
+
+    /* Parenthesis Color */
+    .pC {
+    color:#ffffff;
+    }
+
+    /* Inner Parenthesis Color */
+    .iPC {
+    color:#d4f088;
+    }
+
+    /* Bracket Color */
+    .bC {
+    color:#ffffff;
+    }
+
+    /* Inner Bracket Color */
+    .iBC {
+    color:#d4f088;
+    }
+
+    /* Code Highlighter End */
+
+    /* Mobile */
+    @media (max-width: 810px) {
+        body {
+        padding-left:15px;
+        padding-right:15px;
+        }
+
+        nav, main, section, aside, footer {
+        width:100%;
+        }
+
+        nav, main {
+        flex-direction:column;
+        }
+
+        #leftnav, #rightnav {
+        width:100%;
+        text-align:center;
+        }
+
+        #leftnav {
+        order:0;
+        }
+
+        #middlenav {
+        order:2;
+        margin-left:0px;
+        margin-right:0px;
+        }
+
+        #rightnav {
+        order:1;
+        }
+
+        aside {
+        margin-top:20px;
+        }
+
+        #blog-pager {
+        font-size:20px;
+        }
+    }
+    ]]></b:skin>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id='leftnav'>
+            <a expr:href='data:blog.homepageUrl'>
+            <!-- Include you logo image here instead of below sample text -->
+            Test Portal
+            </a>
+            </div>
+            <div id='middlenav'>
+            <form expr:action='data:blog.searchUrl' id='uform' target='_top'>
+            <input type='text' id='usearch' placeholder='Search' name='q' expr:value='data:view.isSearch ? data:view.search.query.escaped : &quot;&quot;' autocomplete='off'/>
+            </form>
+            </div>
+            <div id='rightnav'>
+                <!-- Add your social media's follow  url below -->
+                <a href = ''><svg class='svg-follow' viewBox="0 0 512 512"><path d="M256 70.7c-102.6 0-185.9 83.2-185.9 185.9 0 82.1 53.3 151.8 127.1 176.4 9.3 1.7 12.3-4 12.3-8.9V389.4c-51.7 11.3-62.5-21.9-62.5-21.9 -8.4-21.5-20.6-27.2-20.6-27.2 -16.9-11.5 1.3-11.3 1.3-11.3 18.7 1.3 28.5 19.2 28.5 19.2 16.6 28.4 43.5 20.2 54.1 15.4 1.7-12 6.5-20.2 11.8-24.9 -41.3-4.7-84.7-20.6-84.7-91.9 0-20.3 7.3-36.9 19.2-49.9 -1.9-4.7-8.3-23.6 1.8-49.2 0 0 15.6-5 51.1 19.1 14.8-4.1 30.7-6.2 46.5-6.3 15.8 0.1 31.7 2.1 46.6 6.3 35.5-24 51.1-19.1 51.1-19.1 10.1 25.6 3.8 44.5 1.8 49.2 11.9 13 19.1 29.6 19.1 49.9 0 71.4-43.5 87.1-84.9 91.7 6.7 5.8 12.8 17.1 12.8 34.4 0 24.9 0 44.9 0 51 0 4.9 3 10.7 12.4 8.9 73.8-24.6 127-94.3 127-176.4C441.9 153.9 358.6 70.7 256 70.7z"/></svg></a>
+                <a href = ''><svg class='svg-follow' viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"/></svg></a>
+                <a href = ''><svg class='svg-follow' viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"/></svg></a>
+            </div>
+        </nav>
+    </header>
+    <b:if cond= 'data:view.isError'>
+    <b:else/>
+        <b:if cond='data:blog.pageType != "index"'>
+            <b:if cond='data:blog.isMobileRequest == "false"'>
+                <div class='social-icon-share'>
+                <a expr:href='"https://twitter.com/intent/tweet?url=" + data:blog.url + "&amp;text=" + data:blog.pageName' target='_blank' rel='noopener' class='twitter' title='Share to Twitter'><svg class='svg-share' viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"/></svg></a>
+                <a expr:href='"https://www.facebook.com/sharer/sharer.php?u=" + data:blog.url' target='_blank' rel='noopener' class='facebook' title='Share to Facebook'><svg class='svg-share' viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"/></svg></a>
+                <a expr:href='"https://www.tumblr.com/share?v=3&amp;u=" + data:blog.url + "&amp;t=" + data:blog.pageName' target='_blank' rel='noopener' class='tumblr' title='Share to Tumblr'><svg class='svg-share' viewBox="0 0 512 512"><path d="M210.8 80.3c-2.3 18.3-6.4 33.4-12.4 45.2 -6 11.9-13.9 22-23.9 30.5 -9.9 8.5-21.8 14.9-35.7 19.5v50.6h38.9v124.5c0 16.2 1.7 28.6 5.1 37.1 3.4 8.5 9.5 16.6 18.3 24.2 8.8 7.6 19.4 13.4 31.9 17.5 12.5 4.1 26.8 6.1 43 6.1 14.3 0 27.6-1.4 39.9-4.3 12.3-2.9 26-7.9 41.2-15v-55.9c-17.8 11.7-35.7 17.5-53.7 17.5 -10.1 0-19.1-2.4-27-7.1 -5.9-3.5-10-8.2-12.2-14 -2.2-5.8-3.3-19.1-3.3-39.7v-91.1H345.5v-55.8h-84.4v-90H210.8z"/></svg></a>
+                </div>
+            </b:if>
+        </b:if>
+    </b:if>
+    <main>
+        <section>
+            <b:if cond='data:view.isError'>
+            Oops no result found !
+            <b:else/>
+                <b:section id='content-section'>
+                    <b:widget id='Blog1'>
+                        <b:includable id='main'>
+                        <b:loop values='data:posts' var='post'>
+                            <!-- -->
+                            <b:if cond='data:blog.pageType != "index"'>
+                            <script type="application/ld+json">
+                            {
+                                "@context": "https://schema.org/",
+                                "@type": "BlogPosting",
+                                "expr:@id": "<data:post.url/>#BlogPosting",
+                                "mainEntityOfPage": "<data:post.url/>",
+                                "headline": "<data:post.title/>",
+                                "name": "<data:post.title/>",
+                                "description": "<data:view.description.escaped/>",
+                                "datePublished": "<data:post.timestamp/>",
+                                "dateModified": "<data:post.lastUpdatedISO8601/>",
+                                "author": {
+                                    "@type": "Person",
+                                    "name": "<data:post.author/>"
+                                },
+                                "publisher": {
+                                    "@type": "Organization",
+                                    "@id": "<data:blog.homepageUrl/>",
+                                    "name": "<data:blog.title/>",
+                                    "logo": {
+                                        <!-- Fill your website logo here and also update the logo width and height px-->
+                                        "@type": "ImageObject",
+                                        "@id": "",
+                                        "url": "",
+                                        "width": "",
+                                        "height": ""
+                                    }
+                                },
+                                "image": {
+                                    <!-- Fill your website image here and also update the logo width and height px-->
+                                    "@type": "ImageObject",
+                                    "@id": "",
+                                    "url": "",
+                                    "height": "",
+                                    "width": ""
+                                },
+                                "url": "<data:post.url/>",
+                                "isPartOf": {
+                                    "@type" : "Blog",
+                                    "@id": "<data:post.url/>",
+                                    "name": "<data:post.title/>",
+                                    "publisher": {
+                                        "@type": "Organization",
+                                        "@id": "<data:blog.homepageUrl/>",
+                                        "name": "<data:blog.title/>"
+                                    }
+                                },
+                                "keywords": [
+                                    "<data:blog.title/>"
+                                ]
+                            }
+                            </script>
+                            </b:if>
+                            <!-- -->
+                            <article>
+                                <div class='contentdiv'>
+                                    <time><data:post.timestamp/></time>
+                                    <b:if cond='data:blog.pageType == "index"'>
+                                    <h2><a expr:href='data:post.url' rel='follow'><data:post.title/></a></h2>
+                                    <b:else/>
+                                    <h1><data:post.title/></h1>
+                                    </b:if>
+                                    <b:if cond='data:blog.pageType != "index"'>
+                                        <b:if cond='data:blog.isMobileRequest == "true"'>
+                                        <div>
+                                        <a expr:href='"https://twitter.com/intent/tweet?url=" + data:blog.url + "&amp;text=" + data:blog.pageName' target='_blank' rel='noopener' title='Share to Twitter'><svg class='svg-mo-share twitter' viewBox="0 0 512 512"><path d="M419.6 168.6c-11.7 5.2-24.2 8.7-37.4 10.2 13.4-8.1 23.8-20.8 28.6-36 -12.6 7.5-26.5 12.9-41.3 15.8 -11.9-12.6-28.8-20.6-47.5-20.6 -42 0-72.9 39.2-63.4 79.9 -54.1-2.7-102.1-28.6-134.2-68 -17 29.2-8.8 67.5 20.1 86.9 -10.7-0.3-20.7-3.3-29.5-8.1 -0.7 30.2 20.9 58.4 52.2 64.6 -9.2 2.5-19.2 3.1-29.4 1.1 8.3 25.9 32.3 44.7 60.8 45.2 -27.4 21.4-61.8 31-96.4 27 28.8 18.5 63 29.2 99.8 29.2 120.8 0 189.1-102.1 185-193.6C399.9 193.1 410.9 181.7 419.6 168.6z"/></svg></a>
+                                        <a expr:href='"https://www.facebook.com/sharer/sharer.php?u=" + data:blog.url' target='_blank' rel='noopener' title='Share to Facebook'><svg class='svg-mo-share facebook' viewBox="0 0 512 512"><path d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z"/></svg></a>
+                                        <a expr:href='"https://www.tumblr.com/share?v=3&amp;u=" + data:blog.url + "&amp;t=" + data:blog.pageName' target='_blank' rel='noopener' title='Share to Tumblr'><svg class='svg-mo-share tumblr' viewBox="0 0 512 512"><path d="M210.8 80.3c-2.3 18.3-6.4 33.4-12.4 45.2 -6 11.9-13.9 22-23.9 30.5 -9.9 8.5-21.8 14.9-35.7 19.5v50.6h38.9v124.5c0 16.2 1.7 28.6 5.1 37.1 3.4 8.5 9.5 16.6 18.3 24.2 8.8 7.6 19.4 13.4 31.9 17.5 12.5 4.1 26.8 6.1 43 6.1 14.3 0 27.6-1.4 39.9-4.3 12.3-2.9 26-7.9 41.2-15v-55.9c-17.8 11.7-35.7 17.5-53.7 17.5 -10.1 0-19.1-2.4-27-7.1 -5.9-3.5-10-8.2-12.2-14 -2.2-5.8-3.3-19.1-3.3-39.7v-91.1H345.5v-55.8h-84.4v-90H210.8z"/></svg></a>
+                                        </div>
+                                        </b:if>
+                                    </b:if>    
+                                    <data:post.body/>
+                                </div>                            
+                                <b:if cond='data:blog.pageType != "index"'>
+                                    <div class='commentdiv'>
+                                    <b:include cond='data:blog.pageType in {"static_page","item"}' data='post' name='comment_picker'/>	
+                                    </div>
+                                </b:if>
+                            </article>
+                        </b:loop>
+                        <div id='blog-pager'>
+                            <b:if cond='data:newerPageUrl'>
+                            <span id='blog-pager-newer-link'>								
+                            <a class='blog-pager-newer-link' expr:href='data:newerPageUrl' rel='follow' title='Newer Post'>Newer Post</a>
+                            </span>
+                            </b:if>
+                            <b:if cond='data:olderPageUrl'>
+                            <span id='blog-pager-older-link'>
+                            <a class='blog-pager-older-link' expr:href='data:olderPageUrl' rel='follow' title='Older Post'>Older Post</a>
+                            </span>
+                            </b:if>
+                            <a class='home-link' expr:href='data:blog.homepageUrl' rel='follow'>Home</a>
+                        </div>
+                        </b:includable>
+                    </b:widget>
+                </b:section>
+            </b:if>
+        </section>
+        <aside>
+            <div class='box'>
+                <h4>Popular Posts</h4>
+                <b:section id='popularpost-section'>
+                <b:widget id='PopularPosts1'>
+                    <b:includable id='main'>
+                    <ul>
+                    <b:loop values='data:posts' var='post'>
+                        <li><a expr:href='data:post.href'><data:post.title/></a></li>
+                    </b:loop>
+                    </ul>
+                    </b:includable>
+                </b:widget>
+                </b:section>
+            </div>
+            <div class='box'>
+                <h4>Topics</h4>
+                <b:section id='label-section'>
+                <b:widget id='Label1'>
+                    <b:includable id='main'>
+                    <b:loop values='data:labels' var='label'>
+                        <a class='label' expr:dir='data:blog.languageDirection' expr:href='data:label.url'><data:label.name/></a>
+                    </b:loop>
+                    </b:includable>
+                </b:widget>
+                </b:section>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        Copyright &#9400; <data:blog.title/> | Powered by <a href='https://www.blogger.com'>Blogger.com</a>
+    </footer>
+    <script>
+    var input = document.getElementById("usearch");
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("uform").submit();
+        }
+    });
+    </script>
+</body>
+</html>
